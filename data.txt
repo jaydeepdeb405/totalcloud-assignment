@@ -1,0 +1,1364 @@
+{
+  "Monday": [
+    {
+      "time": "10:00 AM",
+      "className": "6th",
+      "subjectName": "Science"
+    },
+    {
+      "time": "10:00 AM",
+      "className": "",
+      "subjectName": "Kannada"
+    },
+    {
+      "time": "10:00 AM",
+      "className": "",
+      "subjectName": "English"
+    },
+    {
+      "time": "10:00 AM",
+      "className": "",
+      "subjectName": "Hindi"
+    },
+    {
+      "time": "10:00 AM",
+      "className": "7th",
+      "subjectName": "Maths"
+    },
+    {
+      "time": "11:00 AM",
+      "className": "7th",
+      "subjectName": "Science"
+    },
+    {
+      "time": "11:00 AM",
+      "className": "",
+      "subjectName": "Kannada"
+    },
+    {
+      "time": "11:00 AM",
+      "className": "6th",
+      "subjectName": "English"
+    },
+    {
+      "time": "11:00 AM",
+      "className": "",
+      "subjectName": "Hindi"
+    },
+    {
+      "time": "11:00 AM",
+      "className": "8th",
+      "subjectName": "Maths"
+    },
+    {
+      "time": "12:00 PM",
+      "className": "8th",
+      "subjectName": "Science"
+    },
+    {
+      "time": "12:00 PM",
+      "className": "6th",
+      "subjectName": "Kannada"
+    },
+    {
+      "time": "12:00 PM",
+      "className": "7th",
+      "subjectName": "English"
+    },
+    {
+      "time": "12:00 PM",
+      "className": "",
+      "subjectName": "Hindi"
+    },
+    {
+      "time": "12:00 PM",
+      "className": "9th",
+      "subjectName": "Maths"
+    },
+    {
+      "time": "1:00 PM",
+      "className": "9th",
+      "subjectName": "Science"
+    },
+    {
+      "time": "1:00 PM",
+      "className": "7th",
+      "subjectName": "Kannada"
+    },
+    {
+      "time": "1:00 PM",
+      "className": "8th",
+      "subjectName": "English"
+    },
+    {
+      "time": "1:00 PM",
+      "className": "6th",
+      "subjectName": "Hindi"
+    },
+    {
+      "time": "1:00 PM",
+      "className": "10th",
+      "subjectName": "Maths"
+    },
+    {
+      "time": "2:00 PM",
+      "className": "10th",
+      "subjectName": "Science"
+    },
+    {
+      "time": "2:00 PM",
+      "className": "8th",
+      "subjectName": "Kannada"
+    },
+    {
+      "time": "2:00 PM",
+      "className": "9th",
+      "subjectName": "English"
+    },
+    {
+      "time": "2:00 PM",
+      "className": "7th",
+      "subjectName": "Hindi"
+    },
+    {
+      "time": "2:00 PM",
+      "className": "",
+      "subjectName": "Maths"
+    },
+    {
+      "time": "3:00 PM",
+      "className": "",
+      "subjectName": "Science"
+    },
+    {
+      "time": "3:00 PM",
+      "className": "9th",
+      "subjectName": "Kannada"
+    },
+    {
+      "time": "3:00 PM",
+      "className": "10th",
+      "subjectName": "English"
+    },
+    {
+      "time": "3:00 PM",
+      "className": "8th",
+      "subjectName": "Hindi"
+    },
+    {
+      "time": "3:00 PM",
+      "className": "",
+      "subjectName": "Maths"
+    },
+    {
+      "time": "4:00 PM",
+      "className": "",
+      "subjectName": "Science"
+    },
+    {
+      "time": "4:00 PM",
+      "className": "10th",
+      "subjectName": "Kannada"
+    },
+    {
+      "time": "4:00 PM",
+      "className": "",
+      "subjectName": "English"
+    },
+    {
+      "time": "4:00 PM",
+      "className": "9th",
+      "subjectName": "Hindi"
+    },
+    {
+      "time": "4:00 PM",
+      "className": "",
+      "subjectName": "Maths"
+    },
+    {
+      "time": "8:00 AM",
+      "className": "",
+      "subjectName": "Science"
+    },
+    {
+      "time": "8:00 AM",
+      "className": "",
+      "subjectName": "Kannada"
+    },
+    {
+      "time": "8:00 AM",
+      "className": "",
+      "subjectName": "English"
+    },
+    {
+      "time": "8:00 AM",
+      "className": "10th",
+      "subjectName": "Hindi"
+    },
+    {
+      "time": "8:00 AM",
+      "className": "",
+      "subjectName": "Maths"
+    },
+    {
+      "time": "9:00 AM",
+      "className": "",
+      "subjectName": "Science"
+    },
+    {
+      "time": "9:00 AM",
+      "className": "",
+      "subjectName": "Kannada"
+    },
+    {
+      "time": "9:00 AM",
+      "className": "",
+      "subjectName": "English"
+    },
+    {
+      "time": "9:00 AM",
+      "className": "",
+      "subjectName": "Hindi"
+    },
+    {
+      "time": "9:00 AM",
+      "className": "6th",
+      "subjectName": "Maths"
+    }
+  ],
+  "Tuesday": [
+    {
+      "time": "10:00 AM",
+      "className": "",
+      "subjectName": "Science"
+    },
+    {
+      "time": "10:00 AM",
+      "className": "",
+      "subjectName": "Kannada"
+    },
+    {
+      "time": "10:00 AM",
+      "className": "",
+      "subjectName": "English"
+    },
+    {
+      "time": "10:00 AM",
+      "className": "",
+      "subjectName": "Hindi"
+    },
+    {
+      "time": "10:00 AM",
+      "className": "6th",
+      "subjectName": "Maths"
+    },
+    {
+      "time": "11:00 AM",
+      "className": "6th",
+      "subjectName": "Science"
+    },
+    {
+      "time": "11:00 AM",
+      "className": "",
+      "subjectName": "Kannada"
+    },
+    {
+      "time": "11:00 AM",
+      "className": "",
+      "subjectName": "English"
+    },
+    {
+      "time": "11:00 AM",
+      "className": "",
+      "subjectName": "Hindi"
+    },
+    {
+      "time": "11:00 AM",
+      "className": "7th",
+      "subjectName": "Maths"
+    },
+    {
+      "time": "12:00 PM",
+      "className": "7th",
+      "subjectName": "Science"
+    },
+    {
+      "time": "12:00 PM",
+      "className": "",
+      "subjectName": "Kannada"
+    },
+    {
+      "time": "12:00 PM",
+      "className": "6th",
+      "subjectName": "English"
+    },
+    {
+      "time": "12:00 PM",
+      "className": "",
+      "subjectName": "Hindi"
+    },
+    {
+      "time": "12:00 PM",
+      "className": "8th",
+      "subjectName": "Maths"
+    },
+    {
+      "time": "1:00 PM",
+      "className": "8th",
+      "subjectName": "Science"
+    },
+    {
+      "time": "1:00 PM",
+      "className": "6th",
+      "subjectName": "Kannada"
+    },
+    {
+      "time": "1:00 PM",
+      "className": "7th",
+      "subjectName": "English"
+    },
+    {
+      "time": "1:00 PM",
+      "className": "",
+      "subjectName": "Hindi"
+    },
+    {
+      "time": "1:00 PM",
+      "className": "9th",
+      "subjectName": "Maths"
+    },
+    {
+      "time": "2:00 PM",
+      "className": "9th",
+      "subjectName": "Science"
+    },
+    {
+      "time": "2:00 PM",
+      "className": "7th",
+      "subjectName": "Kannada"
+    },
+    {
+      "time": "2:00 PM",
+      "className": "8th",
+      "subjectName": "English"
+    },
+    {
+      "time": "2:00 PM",
+      "className": "6th",
+      "subjectName": "Hindi"
+    },
+    {
+      "time": "2:00 PM",
+      "className": "10th",
+      "subjectName": "Maths"
+    },
+    {
+      "time": "3:00 PM",
+      "className": "10th",
+      "subjectName": "Science"
+    },
+    {
+      "time": "3:00 PM",
+      "className": "8th",
+      "subjectName": "Kannada"
+    },
+    {
+      "time": "3:00 PM",
+      "className": "9th",
+      "subjectName": "English"
+    },
+    {
+      "time": "3:00 PM",
+      "className": "7th",
+      "subjectName": "Hindi"
+    },
+    {
+      "time": "3:00 PM",
+      "className": "",
+      "subjectName": "Maths"
+    },
+    {
+      "time": "4:00 PM",
+      "className": "",
+      "subjectName": "Science"
+    },
+    {
+      "time": "4:00 PM",
+      "className": "9th",
+      "subjectName": "Kannada"
+    },
+    {
+      "time": "4:00 PM",
+      "className": "10th",
+      "subjectName": "English"
+    },
+    {
+      "time": "4:00 PM",
+      "className": "8th",
+      "subjectName": "Hindi"
+    },
+    {
+      "time": "4:00 PM",
+      "className": "",
+      "subjectName": "Maths"
+    },
+    {
+      "time": "8:00 AM",
+      "className": "",
+      "subjectName": "Science"
+    },
+    {
+      "time": "8:00 AM",
+      "className": "10th",
+      "subjectName": "Kannada"
+    },
+    {
+      "time": "8:00 AM",
+      "className": "",
+      "subjectName": "English"
+    },
+    {
+      "time": "8:00 AM",
+      "className": "9th",
+      "subjectName": "Hindi"
+    },
+    {
+      "time": "8:00 AM",
+      "className": "",
+      "subjectName": "Maths"
+    },
+    {
+      "time": "9:00 AM",
+      "className": "",
+      "subjectName": "Science"
+    },
+    {
+      "time": "9:00 AM",
+      "className": "",
+      "subjectName": "Kannada"
+    },
+    {
+      "time": "9:00 AM",
+      "className": "",
+      "subjectName": "English"
+    },
+    {
+      "time": "9:00 AM",
+      "className": "10th",
+      "subjectName": "Hindi"
+    },
+    {
+      "time": "9:00 AM",
+      "className": "",
+      "subjectName": "Maths"
+    }
+  ],
+  "Wednesday": [
+    {
+      "time": "10:00 AM",
+      "className": "",
+      "subjectName": "Science"
+    },
+    {
+      "time": "10:00 AM",
+      "className": "",
+      "subjectName": "Kannada"
+    },
+    {
+      "time": "10:00 AM",
+      "className": "",
+      "subjectName": "English"
+    },
+    {
+      "time": "10:00 AM",
+      "className": "10th",
+      "subjectName": "Hindi"
+    },
+    {
+      "time": "10:00 AM",
+      "className": "",
+      "subjectName": "Maths"
+    },
+    {
+      "time": "11:00 AM",
+      "className": "",
+      "subjectName": "Science"
+    },
+    {
+      "time": "11:00 AM",
+      "className": "",
+      "subjectName": "Kannada"
+    },
+    {
+      "time": "11:00 AM",
+      "className": "",
+      "subjectName": "English"
+    },
+    {
+      "time": "11:00 AM",
+      "className": "",
+      "subjectName": "Hindi"
+    },
+    {
+      "time": "11:00 AM",
+      "className": "6th",
+      "subjectName": "Maths"
+    },
+    {
+      "time": "12:00 PM",
+      "className": "6th",
+      "subjectName": "Science"
+    },
+    {
+      "time": "12:00 PM",
+      "className": "",
+      "subjectName": "Kannada"
+    },
+    {
+      "time": "12:00 PM",
+      "className": "",
+      "subjectName": "English"
+    },
+    {
+      "time": "12:00 PM",
+      "className": "",
+      "subjectName": "Hindi"
+    },
+    {
+      "time": "12:00 PM",
+      "className": "7th",
+      "subjectName": "Maths"
+    },
+    {
+      "time": "1:00 PM",
+      "className": "7th",
+      "subjectName": "Science"
+    },
+    {
+      "time": "1:00 PM",
+      "className": "",
+      "subjectName": "Kannada"
+    },
+    {
+      "time": "1:00 PM",
+      "className": "6th",
+      "subjectName": "English"
+    },
+    {
+      "time": "1:00 PM",
+      "className": "",
+      "subjectName": "Hindi"
+    },
+    {
+      "time": "1:00 PM",
+      "className": "8th",
+      "subjectName": "Maths"
+    },
+    {
+      "time": "2:00 PM",
+      "className": "8th",
+      "subjectName": "Science"
+    },
+    {
+      "time": "2:00 PM",
+      "className": "6th",
+      "subjectName": "Kannada"
+    },
+    {
+      "time": "2:00 PM",
+      "className": "7th",
+      "subjectName": "English"
+    },
+    {
+      "time": "2:00 PM",
+      "className": "",
+      "subjectName": "Hindi"
+    },
+    {
+      "time": "2:00 PM",
+      "className": "9th",
+      "subjectName": "Maths"
+    },
+    {
+      "time": "3:00 PM",
+      "className": "9th",
+      "subjectName": "Science"
+    },
+    {
+      "time": "3:00 PM",
+      "className": "7th",
+      "subjectName": "Kannada"
+    },
+    {
+      "time": "3:00 PM",
+      "className": "8th",
+      "subjectName": "English"
+    },
+    {
+      "time": "3:00 PM",
+      "className": "6th",
+      "subjectName": "Hindi"
+    },
+    {
+      "time": "3:00 PM",
+      "className": "10th",
+      "subjectName": "Maths"
+    },
+    {
+      "time": "4:00 PM",
+      "className": "10th",
+      "subjectName": "Science"
+    },
+    {
+      "time": "4:00 PM",
+      "className": "8th",
+      "subjectName": "Kannada"
+    },
+    {
+      "time": "4:00 PM",
+      "className": "9th",
+      "subjectName": "English"
+    },
+    {
+      "time": "4:00 PM",
+      "className": "7th",
+      "subjectName": "Hindi"
+    },
+    {
+      "time": "4:00 PM",
+      "className": "",
+      "subjectName": "Maths"
+    },
+    {
+      "time": "8:00 AM",
+      "className": "",
+      "subjectName": "Science"
+    },
+    {
+      "time": "8:00 AM",
+      "className": "9th",
+      "subjectName": "Kannada"
+    },
+    {
+      "time": "8:00 AM",
+      "className": "10th",
+      "subjectName": "English"
+    },
+    {
+      "time": "8:00 AM",
+      "className": "8th",
+      "subjectName": "Hindi"
+    },
+    {
+      "time": "8:00 AM",
+      "className": "",
+      "subjectName": "Maths"
+    },
+    {
+      "time": "9:00 AM",
+      "className": "",
+      "subjectName": "Science"
+    },
+    {
+      "time": "9:00 AM",
+      "className": "10th",
+      "subjectName": "Kannada"
+    },
+    {
+      "time": "9:00 AM",
+      "className": "",
+      "subjectName": "English"
+    },
+    {
+      "time": "9:00 AM",
+      "className": "9th",
+      "subjectName": "Hindi"
+    },
+    {
+      "time": "9:00 AM",
+      "className": "",
+      "subjectName": "Maths"
+    }
+  ],
+  "Thursday": [
+    {
+      "time": "10:00 AM",
+      "className": "",
+      "subjectName": "Science"
+    },
+    {
+      "time": "10:00 AM",
+      "className": "10th",
+      "subjectName": "Kannada"
+    },
+    {
+      "time": "10:00 AM",
+      "className": "",
+      "subjectName": "English"
+    },
+    {
+      "time": "10:00 AM",
+      "className": "9th",
+      "subjectName": "Hindi"
+    },
+    {
+      "time": "10:00 AM",
+      "className": "",
+      "subjectName": "Maths"
+    },
+    {
+      "time": "11:00 AM",
+      "className": "",
+      "subjectName": "Science"
+    },
+    {
+      "time": "11:00 AM",
+      "className": "",
+      "subjectName": "Kannada"
+    },
+    {
+      "time": "11:00 AM",
+      "className": "",
+      "subjectName": "English"
+    },
+    {
+      "time": "11:00 AM",
+      "className": "10th",
+      "subjectName": "Hindi"
+    },
+    {
+      "time": "11:00 AM",
+      "className": "",
+      "subjectName": "Maths"
+    },
+    {
+      "time": "12:00 PM",
+      "className": "",
+      "subjectName": "Science"
+    },
+    {
+      "time": "12:00 PM",
+      "className": "",
+      "subjectName": "Kannada"
+    },
+    {
+      "time": "12:00 PM",
+      "className": "",
+      "subjectName": "English"
+    },
+    {
+      "time": "12:00 PM",
+      "className": "",
+      "subjectName": "Hindi"
+    },
+    {
+      "time": "12:00 PM",
+      "className": "6th",
+      "subjectName": "Maths"
+    },
+    {
+      "time": "1:00 PM",
+      "className": "6th",
+      "subjectName": "Science"
+    },
+    {
+      "time": "1:00 PM",
+      "className": "",
+      "subjectName": "Kannada"
+    },
+    {
+      "time": "1:00 PM",
+      "className": "",
+      "subjectName": "English"
+    },
+    {
+      "time": "1:00 PM",
+      "className": "",
+      "subjectName": "Hindi"
+    },
+    {
+      "time": "1:00 PM",
+      "className": "7th",
+      "subjectName": "Maths"
+    },
+    {
+      "time": "2:00 PM",
+      "className": "7th",
+      "subjectName": "Science"
+    },
+    {
+      "time": "2:00 PM",
+      "className": "",
+      "subjectName": "Kannada"
+    },
+    {
+      "time": "2:00 PM",
+      "className": "6th",
+      "subjectName": "English"
+    },
+    {
+      "time": "2:00 PM",
+      "className": "",
+      "subjectName": "Hindi"
+    },
+    {
+      "time": "2:00 PM",
+      "className": "8th",
+      "subjectName": "Maths"
+    },
+    {
+      "time": "3:00 PM",
+      "className": "8th",
+      "subjectName": "Science"
+    },
+    {
+      "time": "3:00 PM",
+      "className": "6th",
+      "subjectName": "Kannada"
+    },
+    {
+      "time": "3:00 PM",
+      "className": "7th",
+      "subjectName": "English"
+    },
+    {
+      "time": "3:00 PM",
+      "className": "",
+      "subjectName": "Hindi"
+    },
+    {
+      "time": "3:00 PM",
+      "className": "9th",
+      "subjectName": "Maths"
+    },
+    {
+      "time": "4:00 PM",
+      "className": "9th",
+      "subjectName": "Science"
+    },
+    {
+      "time": "4:00 PM",
+      "className": "7th",
+      "subjectName": "Kannada"
+    },
+    {
+      "time": "4:00 PM",
+      "className": "8th",
+      "subjectName": "English"
+    },
+    {
+      "time": "4:00 PM",
+      "className": "6th",
+      "subjectName": "Hindi"
+    },
+    {
+      "time": "4:00 PM",
+      "className": "10th",
+      "subjectName": "Maths"
+    },
+    {
+      "time": "8:00 AM",
+      "className": "10th",
+      "subjectName": "Science"
+    },
+    {
+      "time": "8:00 AM",
+      "className": "8th",
+      "subjectName": "Kannada"
+    },
+    {
+      "time": "8:00 AM",
+      "className": "9th",
+      "subjectName": "English"
+    },
+    {
+      "time": "8:00 AM",
+      "className": "7th",
+      "subjectName": "Hindi"
+    },
+    {
+      "time": "8:00 AM",
+      "className": "",
+      "subjectName": "Maths"
+    },
+    {
+      "time": "9:00 AM",
+      "className": "",
+      "subjectName": "Science"
+    },
+    {
+      "time": "9:00 AM",
+      "className": "9th",
+      "subjectName": "Kannada"
+    },
+    {
+      "time": "9:00 AM",
+      "className": "10th",
+      "subjectName": "English"
+    },
+    {
+      "time": "9:00 AM",
+      "className": "8th",
+      "subjectName": "Hindi"
+    },
+    {
+      "time": "9:00 AM",
+      "className": "",
+      "subjectName": "Maths"
+    }
+  ],
+  "Friday": [
+    {
+      "time": "10:00 AM",
+      "className": "",
+      "subjectName": "Science"
+    },
+    {
+      "time": "10:00 AM",
+      "className": "9th",
+      "subjectName": "Kannada"
+    },
+    {
+      "time": "10:00 AM",
+      "className": "10th",
+      "subjectName": "English"
+    },
+    {
+      "time": "10:00 AM",
+      "className": "8th",
+      "subjectName": "Hindi"
+    },
+    {
+      "time": "10:00 AM",
+      "className": "",
+      "subjectName": "Maths"
+    },
+    {
+      "time": "11:00 AM",
+      "className": "",
+      "subjectName": "Science"
+    },
+    {
+      "time": "11:00 AM",
+      "className": "10th",
+      "subjectName": "Kannada"
+    },
+    {
+      "time": "11:00 AM",
+      "className": "",
+      "subjectName": "English"
+    },
+    {
+      "time": "11:00 AM",
+      "className": "9th",
+      "subjectName": "Hindi"
+    },
+    {
+      "time": "11:00 AM",
+      "className": "",
+      "subjectName": "Maths"
+    },
+    {
+      "time": "12:00 PM",
+      "className": "",
+      "subjectName": "Science"
+    },
+    {
+      "time": "12:00 PM",
+      "className": "",
+      "subjectName": "Kannada"
+    },
+    {
+      "time": "12:00 PM",
+      "className": "",
+      "subjectName": "English"
+    },
+    {
+      "time": "12:00 PM",
+      "className": "10th",
+      "subjectName": "Hindi"
+    },
+    {
+      "time": "12:00 PM",
+      "className": "",
+      "subjectName": "Maths"
+    },
+    {
+      "time": "1:00 PM",
+      "className": "",
+      "subjectName": "Science"
+    },
+    {
+      "time": "1:00 PM",
+      "className": "",
+      "subjectName": "Kannada"
+    },
+    {
+      "time": "1:00 PM",
+      "className": "",
+      "subjectName": "English"
+    },
+    {
+      "time": "1:00 PM",
+      "className": "",
+      "subjectName": "Hindi"
+    },
+    {
+      "time": "1:00 PM",
+      "className": "6th",
+      "subjectName": "Maths"
+    },
+    {
+      "time": "2:00 PM",
+      "className": "6th",
+      "subjectName": "Science"
+    },
+    {
+      "time": "2:00 PM",
+      "className": "",
+      "subjectName": "Kannada"
+    },
+    {
+      "time": "2:00 PM",
+      "className": "",
+      "subjectName": "English"
+    },
+    {
+      "time": "2:00 PM",
+      "className": "",
+      "subjectName": "Hindi"
+    },
+    {
+      "time": "2:00 PM",
+      "className": "7th",
+      "subjectName": "Maths"
+    },
+    {
+      "time": "3:00 PM",
+      "className": "7th",
+      "subjectName": "Science"
+    },
+    {
+      "time": "3:00 PM",
+      "className": "",
+      "subjectName": "Kannada"
+    },
+    {
+      "time": "3:00 PM",
+      "className": "6th",
+      "subjectName": "English"
+    },
+    {
+      "time": "3:00 PM",
+      "className": "",
+      "subjectName": "Hindi"
+    },
+    {
+      "time": "3:00 PM",
+      "className": "8th",
+      "subjectName": "Maths"
+    },
+    {
+      "time": "4:00 PM",
+      "className": "8th",
+      "subjectName": "Science"
+    },
+    {
+      "time": "4:00 PM",
+      "className": "6th",
+      "subjectName": "Kannada"
+    },
+    {
+      "time": "4:00 PM",
+      "className": "7th",
+      "subjectName": "English"
+    },
+    {
+      "time": "4:00 PM",
+      "className": "",
+      "subjectName": "Hindi"
+    },
+    {
+      "time": "4:00 PM",
+      "className": "9th",
+      "subjectName": "Maths"
+    },
+    {
+      "time": "8:00 AM",
+      "className": "9th",
+      "subjectName": "Science"
+    },
+    {
+      "time": "8:00 AM",
+      "className": "7th",
+      "subjectName": "Kannada"
+    },
+    {
+      "time": "8:00 AM",
+      "className": "8th",
+      "subjectName": "English"
+    },
+    {
+      "time": "8:00 AM",
+      "className": "6th",
+      "subjectName": "Hindi"
+    },
+    {
+      "time": "8:00 AM",
+      "className": "10th",
+      "subjectName": "Maths"
+    },
+    {
+      "time": "9:00 AM",
+      "className": "10th",
+      "subjectName": "Science"
+    },
+    {
+      "time": "9:00 AM",
+      "className": "8th",
+      "subjectName": "Kannada"
+    },
+    {
+      "time": "9:00 AM",
+      "className": "9th",
+      "subjectName": "English"
+    },
+    {
+      "time": "9:00 AM",
+      "className": "7th",
+      "subjectName": "Hindi"
+    },
+    {
+      "time": "9:00 AM",
+      "className": "",
+      "subjectName": "Maths"
+    }
+  ],
+  "Saturday": [
+    {
+      "time": "10:00 AM",
+      "className": "10th",
+      "subjectName": "Science"
+    },
+    {
+      "time": "10:00 AM",
+      "className": "8th",
+      "subjectName": "Kannada"
+    },
+    {
+      "time": "10:00 AM",
+      "className": "9th",
+      "subjectName": "English"
+    },
+    {
+      "time": "10:00 AM",
+      "className": "7th",
+      "subjectName": "Hindi"
+    },
+    {
+      "time": "10:00 AM",
+      "className": "",
+      "subjectName": "Maths"
+    },
+    {
+      "time": "11:00 AM",
+      "className": "",
+      "subjectName": "Science"
+    },
+    {
+      "time": "11:00 AM",
+      "className": "9th",
+      "subjectName": "Kannada"
+    },
+    {
+      "time": "11:00 AM",
+      "className": "10th",
+      "subjectName": "English"
+    },
+    {
+      "time": "11:00 AM",
+      "className": "8th",
+      "subjectName": "Hindi"
+    },
+    {
+      "time": "11:00 AM",
+      "className": "",
+      "subjectName": "Maths"
+    },
+    {
+      "time": "12:00 PM",
+      "className": "",
+      "subjectName": "Science"
+    },
+    {
+      "time": "12:00 PM",
+      "className": "10th",
+      "subjectName": "Kannada"
+    },
+    {
+      "time": "12:00 PM",
+      "className": "",
+      "subjectName": "English"
+    },
+    {
+      "time": "12:00 PM",
+      "className": "9th",
+      "subjectName": "Hindi"
+    },
+    {
+      "time": "12:00 PM",
+      "className": "",
+      "subjectName": "Maths"
+    },
+    {
+      "time": "1:00 PM",
+      "className": "",
+      "subjectName": "Science"
+    },
+    {
+      "time": "1:00 PM",
+      "className": "",
+      "subjectName": "Kannada"
+    },
+    {
+      "time": "1:00 PM",
+      "className": "",
+      "subjectName": "English"
+    },
+    {
+      "time": "1:00 PM",
+      "className": "10th",
+      "subjectName": "Hindi"
+    },
+    {
+      "time": "1:00 PM",
+      "className": "",
+      "subjectName": "Maths"
+    },
+    {
+      "time": "2:00 PM",
+      "className": "",
+      "subjectName": "Science"
+    },
+    {
+      "time": "2:00 PM",
+      "className": "",
+      "subjectName": "Kannada"
+    },
+    {
+      "time": "2:00 PM",
+      "className": "",
+      "subjectName": "English"
+    },
+    {
+      "time": "2:00 PM",
+      "className": "",
+      "subjectName": "Hindi"
+    },
+    {
+      "time": "2:00 PM",
+      "className": "6th",
+      "subjectName": "Maths"
+    },
+    {
+      "time": "3:00 PM",
+      "className": "6th",
+      "subjectName": "Science"
+    },
+    {
+      "time": "3:00 PM",
+      "className": "",
+      "subjectName": "Kannada"
+    },
+    {
+      "time": "3:00 PM",
+      "className": "",
+      "subjectName": "English"
+    },
+    {
+      "time": "3:00 PM",
+      "className": "",
+      "subjectName": "Hindi"
+    },
+    {
+      "time": "3:00 PM",
+      "className": "7th ",
+      "subjectName": "Maths"
+    },
+    {
+      "time": "4:00 PM",
+      "className": "7th",
+      "subjectName": "Science"
+    },
+    {
+      "time": "4:00 PM",
+      "className": "",
+      "subjectName": "Kannada"
+    },
+    {
+      "time": "4:00 PM",
+      "className": "6th",
+      "subjectName": "English"
+    },
+    {
+      "time": "4:00 PM",
+      "className": "",
+      "subjectName": "Hindi"
+    },
+    {
+      "time": "4:00 PM",
+      "className": "8th",
+      "subjectName": "Maths"
+    },
+    {
+      "time": "8:00 AM",
+      "className": "8th",
+      "subjectName": "Science"
+    },
+    {
+      "time": "8:00 AM",
+      "className": "6th",
+      "subjectName": "Kannada"
+    },
+    {
+      "time": "8:00 AM",
+      "className": "7th",
+      "subjectName": "English"
+    },
+    {
+      "time": "8:00 AM",
+      "className": "",
+      "subjectName": "Hindi"
+    },
+    {
+      "time": "8:00 AM",
+      "className": "9th",
+      "subjectName": "Maths"
+    },
+    {
+      "time": "9:00 AM",
+      "className": "9th",
+      "subjectName": "Science"
+    },
+    {
+      "time": "9:00 AM",
+      "className": "7th",
+      "subjectName": "Kannada"
+    },
+    {
+      "time": "9:00 AM",
+      "className": "8th",
+      "subjectName": "English"
+    },
+    {
+      "time": "9:00 AM",
+      "className": "6th",
+      "subjectName": "Hindi"
+    },
+    {
+      "time": "9:00 AM",
+      "className": "10th",
+      "subjectName": "Maths"
+    }
+  ]
+}
