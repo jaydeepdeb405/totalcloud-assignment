@@ -1,3 +1,8 @@
 .container {
     margin-top: 20px;
 }
+
+#extra-teachers {
+    position: relative;
+    left: 10vw;
+}

@@ -41,8 +41,6 @@ const getAdjustedTimeTable = function (csvDataObj) {
             return d.className.length === 0
         });
 
-        console.log(freeClasses, freeTeachers);
-
         extraTeachersRequired += freeClasses.length - freeTeachers.length; 
 
         let adjustedPeriods = freeClasses;

@@ -3,7 +3,7 @@ app.controller('tableController', function ($scope, $http) {
 
     $scope.classWiseTable = false;
     $scope.extraTeachersRequired = "";
-    $scope.heading = "";
+    $scope.heading = "Please enter class name as 6th/7th/8th/9th/10th";
 
     $scope.days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
