@@ -3,10 +3,7 @@ const url = require('url');
 const csvUtil = require('./csvUtil');
 const fileUtil = require('./fileUtil');
 
-// directory name when csv is stored
-const DIR_PATH = './data';
-
-const startServer = function (PORT) {
+const startServer = function (PORT, DIR_PATH) {
     http.createServer(async function (request, response) {
         let csvDataObj = {};
         
