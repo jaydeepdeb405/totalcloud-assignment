@@ -11,4 +11,4 @@ Endpoints to get class wise data:
 
 To view it in web browser (angularJs app), steps:
 1. Run this as Node application      (cd to this folder in cmd/powershell, then run 'node app.js')
-2. Open index.html using windows explorer
+2. Open index.html using any web browser using windows explorer
