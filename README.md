@@ -1,5 +1,14 @@
 # TotalCloudAssignment
 # Simple CSV Parser application
-Run it as node.js application, send GET request to localhost:3000 with query param 'class' to get class wise routine
-For example,
-localhost:3000?class=7th should return class 7th routine in JSON format
+Run it as node.js application  (cd to this folder in cmd/powershell, then run 'node app.js')
+
+Endpoints to get class wise data:
+1. Parsed table - /?className='className'                       (eg. - localhost:3000?className=7th)
+2. Adjusted table - /adjustTimeTable?className='className'      (eg. - localhost:3000/adjustTimeTable?className=6th)
+
+(View runtime logs in console)
+
+
+To view it in web browser (angularJs app), steps:
+1. Run this as Node application      (cd to this folder in cmd/powershell, then run 'node app.js')
+2. Open index.html using windows explorer

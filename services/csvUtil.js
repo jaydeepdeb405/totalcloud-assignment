@@ -1,48 +1,36 @@
-// const getCsvObjectWithIdleTeachers = function (data) {
-//     let csvDataObj = Object.assign({}, data);
-//     let days = Object.keys(csvDataObj);
-//     for (day of days) {
-//         csvDataObj[day] = csvDataObj[day]
-//             .filter(data =>
-//                 data.className.length === 0
-//                 && data.subjectName.length > 0);
-//     }
-//     return csvDataObj;
-// }
-
-const _getLeisurePeriodsByClassName = function (className, csvDataObj) {
+/*
+params className, csvDataObj: extracted csv as json
+returns time table in json
+*/
+const getTimeTableByClassName = function (className, csvDataObj) {
     csvDataObj = Object.assign({}, csvDataObj);
     const periods = [
-        '8:00 AM', '9:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', 
+        '8:00 AM', '9:00 AM', '10:00 AM', '11:00 AM', '12:00 PM',
         '1:00 PM', '2:00 PM', '3:00 PM', '4:00 PM'
     ];
-    
-    csvDataObj = getCsvObjectByClassName(className, csvDataObj);
-    let leisurePeriods = [];
-    let days = Object.keys(csvDataObj);
-    for (day of days) {
-        let occupiedPeriods = [];
-        csvDataObj[day].forEach((data) => {
-            occupiedPeriods.push(data.time);
-        });
-        leisurePeriods.push({day: day, 
-            periods: periods.filter((data) => occupiedPeriods.indexOf(data) === -1)});
-    }
-    return leisurePeriods;
-}
-
-const getCsvObjectByClassName = function (className, csvDataObj) {
-    csvDataObj = Object.assign({}, csvDataObj);
+    let data = {};
     const days = Object.keys(csvDataObj);
-    for (day of days) {
-        csvDataObj[day] = csvDataObj[day].filter(data => data.className === className);
+    for(period of periods) {
+        data[period] = new Array(6);
+        for (index in days) {
+            csvDataObj[days[index]] = csvDataObj[days[index]].filter(data => data.className === className);
+            for(periodData of csvDataObj[days[index]]) {
+                if (data[periodData.time]) {
+                    data[periodData.time][index] = periodData.subjectName;
+                }
+            }
+        }
     }
-    return csvDataObj;
+    return data;
 }
 
-const getCsvObjectWithNoIdleTeachers = function (csvDataObj) {
+/*
+params csvDataObj: extracted csv as json
+returns time table in json
+*/
+const getAdjustedTimeTable = function (csvDataObj) {
     let extraTeachersRequired = 0;
-    csvDataObj = _getCsvObjectWithLeisurePeriods(Object.assign({}, csvDataObj));
+    csvDataObj = _addLeisurePeriods(Object.assign({}, csvDataObj));
     const keys = Object.keys(csvDataObj);
     for(key of keys) {
         let dayData = csvDataObj[key];
@@ -69,19 +57,11 @@ const getCsvObjectWithNoIdleTeachers = function (csvDataObj) {
     return { extraTeachersRequired, timeTable: csvDataObj };
 }
 
-// const sortCsvObject = function (csvDataObj) {
-//     let data = {};
-//     const keys = Object.keys(csvDataObj);
-//     for(key of keys) {
-//         let dayData = csvDataObj[key];
-//         dayData = dayData.sort((a, b) => {
-//             return a.time>b.time ? 1 : -1;
-//         });
-//         data[key] = dayData;
-//     }
-//     return data;
-// }
-
+/*
+params subjectName: extracted from csv filenames, 
+data: extracted csv as json, csvDataObj: extracted csv json to concat with extracted json
+returns extracted csv data in json format
+*/
 const getCsvObject = function (subjectName, data, csvDataObj) {
     const rows = data.split('\r\n');
 
@@ -101,15 +81,45 @@ const getCsvObject = function (subjectName, data, csvDataObj) {
             dayData.subjectName = subjectName;
             arr.push(dayData);
         }
-        // arr = arr.sort((a, b) => {
-        //     return a.time>b.time ? 1 : -1;
-        // })
         csvDataObj[days[dayIndex]] = arr;
     }
     return csvDataObj;
 }
 
-const _getCsvObjectWithLeisurePeriods = function(data) {
+/*
+utility/helper methods below
+*/
+const _getLeisurePeriodsByClassName = function (className, csvDataObj) {
+    csvDataObj = Object.assign({}, csvDataObj);
+    const periods = [
+        '8:00 AM', '9:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', 
+        '1:00 PM', '2:00 PM', '3:00 PM', '4:00 PM'
+    ];
+    
+    csvDataObj = _filterByClassName(className, csvDataObj);
+    let leisurePeriods = [];
+    let days = Object.keys(csvDataObj);
+    for (day of days) {
+        let occupiedPeriods = [];
+        csvDataObj[day].forEach((data) => {
+            occupiedPeriods.push(data.time);
+        });
+        leisurePeriods.push({day: day, 
+            periods: periods.filter((data) => occupiedPeriods.indexOf(data) === -1)});
+    }
+    return leisurePeriods;
+}
+
+const _filterByClassName = function (className, csvDataObj) {
+    csvDataObj = Object.assign({}, csvDataObj);
+    const days = Object.keys(csvDataObj);
+    for (day of days) {
+        csvDataObj[day] = csvDataObj[day].filter(data => data.className === className);
+    }
+    return csvDataObj;
+}
+
+const _addLeisurePeriods = function(data) {
     data = Object.assign({}, data);
     const classNames = ['6th', '7th', '8th', '9th', '10th'];
     for (className of classNames) {
@@ -130,6 +140,6 @@ const _getCsvObjectWithLeisurePeriods = function(data) {
 
 module.exports = { 
     getCsvObject, 
-    getCsvObjectByClassName, 
-    getCsvObjectWithNoIdleTeachers
+    getTimeTableByClassName, 
+    getAdjustedTimeTable
  };

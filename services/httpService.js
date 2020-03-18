@@ -3,6 +3,7 @@ const url = require('url');
 const csvUtil = require('./csvUtil');
 const fileUtil = require('./fileUtil');
 
+// directory name when csv is stored
 const DIR_PATH = './data';
 
 const startServer = function (PORT) {
@@ -12,7 +13,7 @@ const startServer = function (PORT) {
         const FILE_NAMES = await fileUtil.getFilenamesInDir(DIR_PATH);
         for (fileName of FILE_NAMES) {
             let subjectName = fileName.split('-')[1].split('.')[0].substr(1);
-            let data = await fileUtil.getCsvData(`${DIR_PATH}/${fileName}`);
+            let data = await fileUtil.readDataFromFile(`${DIR_PATH}/${fileName}`);
     
             csvDataObj = csvUtil.getCsvObject(subjectName, data, csvDataObj);
             
@@ -25,17 +26,25 @@ const startServer = function (PORT) {
         });
 
         if (queryParams.class) {
-            response.write(JSON.stringify(csvUtil.getCsvObjectByClassName(queryParams.class, csvDataObj), null, 2));
-            console.log('\x1b[33m%s\x1b[0m', `Request method = GET\nURL = ${request.url}\n`);
-        }
-        else if (request.url.toString() === '/adjustTimeTable') {
-            response.write(JSON.stringify(csvUtil.getCsvObjectWithNoIdleTeachers(csvDataObj), null, 2));
-            console.log('\x1b[33m%s\x1b[0m', `Request method = GET\nURL = ${request.url}\n`);
+            if (request.url.toString().startsWith('/adjustTimeTable')) {
+                const adjustedTableData = csvUtil.getAdjustedTimeTable(csvDataObj);
+                const res = { 
+                    extraTeachersRequired : adjustedTableData.extraTeachersRequired,
+                    timeTable : csvUtil.getTimeTableByClassName(queryParams.class, adjustedTableData.timeTable)
+                }
+                response.write(JSON.stringify(res, null, 2));
+                console.log('\x1b[33m%s\x1b[0m', `Request method = GET\nURL = ${request.url}\n`);
+            }
+            else {
+                response.write(JSON.stringify(csvUtil.getTimeTableByClassName(queryParams.class, csvDataObj), null, 2));
+                console.log('\x1b[33m%s\x1b[0m', `Request method = GET\nURL = ${request.url}\n`);
+            }
         }
         else {
-            response.write(JSON.stringify(csvDataObj, null, 2));
+            response.write(JSON.stringify({}, null, 2));
             console.log('\x1b[33m%s\x1b[0m', `Request method = GET\nURL = ${request.url}\n`);
         }
+        
         response.end();
 
     }).listen(PORT);

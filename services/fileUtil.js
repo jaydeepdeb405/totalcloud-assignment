@@ -9,7 +9,7 @@ const getFilenamesInDir = async function (dirPath) {
     });
 };
 
-const getCsvData = async function (fileName) {
+const readDataFromFile = async function (fileName) {
     return new Promise((resolve, reject) => {
         fs.readFile(fileName, 'utf8', function (err, data) {
             if (err) reject(err);
@@ -28,4 +28,4 @@ const writeJSONToFile = async function (csvDataObj, fileName) {
     });
 }
 
-module.exports = { getFilenamesInDir, getCsvData, writeJSONToFile };
+module.exports = { getFilenamesInDir, readDataFromFile, writeJSONToFile };
