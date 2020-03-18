@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="web/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="web/bootstrap.min.css">
+    <script src="web/angular.min.js"></script>
+    <script src="web/app.js"></script>
+</head>
+
+<body ng-app="TimetableApp">
+
+    <div class="container" ng-controller="tableController">
+        <form>
+            <span class="form-group">
+                <input type="text" id="className" ng-model="className" placeholder="Enter class name">
+            </span>
+            <button class="btn btn-primary" ng-click="getTimeTableByClassName(className)">Get
+                timetable</button>
+
+            <button class="btn btn-primary" ng-click="adjustTimeTable()">Adjust
+                timetable</button>
+            <span style="float:right" class="form-group">
+                <label for="extraTeachers"></label>
+                <input type="text" id="extraTeachers" ng-model="extraTeachersRequired"
+                    placeholder="No of extra teachers" readonly>
+            </span>
+        </form>
+        
+        <div ng-if="classWiseTable" class="container">
+            <h1>Timetable for class {{className}}</h1>
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col"> </th>
+                        <th scope="col" ng-repeat="(key, val) in classWiseData">{{key}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>@twitter</td>
+                    </tr>
+            </table>
+        </div>
+
+        <div ng-if="adjustedTable" class="container">
+            <h1>Adjusted table with min idle teachers</h1>
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col"> </th>
+                        <th scope="col" ng-repeat="(key, val) in adjustedTableData">{{key}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+            </table>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -18,11 +18,12 @@ const getCsvData = async function (fileName) {
     });
 }
 
-const writeJSONToFile = async function (csvDataObj) {
+const writeJSONToFile = async function (csvDataObj, fileName) {
     return new Promise((resolve, reject) => {
-        fs.writeFile('classWiseRoutine.txt', JSON.stringify(csvDataObj, null, 2), function (err) {
+        fs.writeFile(`${fileName}.txt`, JSON.stringify(csvDataObj, null, 2), function (err) {
             if (err) throw err;
-            resolve('File is created successfully.');
+            console.log(`${fileName}.txt is created successfully`);
+            resolve(`${fileName}.txt is created successfully`);
         });
     });
 }
