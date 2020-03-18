@@ -1,11 +1,11 @@
 {
-  "name": "backend-assignment",
+  "name": "timetable-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "Timetable application",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
-  "author": "",
+  "author": "Jaydeep Deb",
   "license": "ISC"
 }
