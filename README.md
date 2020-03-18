@@ -12,3 +12,5 @@ Endpoints to get class wise data:
 To view it in web browser (angularJs app), steps:
 1. Run this as Node application      (cd to this folder in cmd/powershell, then run 'node app.js')
 2. Open index.html using any web browser using windows explorer
+3. Enter class name values as 6th/7th/8th/9th/10th in text field & click Get TimeTable
+4. Click Adjust Timetable to view adjusted timetable & additional teacher required count
