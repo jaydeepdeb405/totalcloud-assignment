@@ -18,6 +18,10 @@ const readDataFromFile = async function (fileName) {
     });
 }
 
+const createReadStream = function (path) {
+    return fs.createReadStream(path, 'utf8');
+}
+
 const writeJSONToFile = async function (csvDataObj, fileName) {
     return new Promise((resolve, reject) => {
         fs.writeFile(`${fileName}.txt`, JSON.stringify(csvDataObj, null, 2), function (err) {
@@ -28,4 +32,4 @@ const writeJSONToFile = async function (csvDataObj, fileName) {
     });
 }
 
-module.exports = { getFilenamesInDir, readDataFromFile, writeJSONToFile };
+module.exports = { getFilenamesInDir, readDataFromFile, writeJSONToFile, createReadStream };
