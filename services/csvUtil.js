@@ -31,9 +31,9 @@ returns time table in json
 const getAdjustedTimeTable = function (csvDataObj) {
     let extraTeachersRequired = 0;
     csvDataObj = _addLeisurePeriods(Object.assign({}, csvDataObj));
-    const keys = Object.keys(csvDataObj);
-    for(key of keys) {
-        let dayData = csvDataObj[key];
+    const days = Object.keys(csvDataObj);
+    for(day of days) {
+        let dayData = csvDataObj[day];
         const freeClasses = dayData.filter((d) => {
             return d.subjectName.length === 0
         });
@@ -41,18 +41,21 @@ const getAdjustedTimeTable = function (csvDataObj) {
             return d.className.length === 0
         });
 
-        let adjustedPeriods = freeClasses;
-
-        for(let index=0; index<freeClasses.length && freeTeachers[index]; index++) {
-            adjustedPeriods[index].subjectName = freeTeachers[index].subjectName;
-        }
+        console.log(freeClasses, freeTeachers);
 
         extraTeachersRequired += freeClasses.length - freeTeachers.length; 
 
-        csvDataObj[key] = dayData.filter((d) => {
+        let adjustedPeriods = freeClasses;
+
+        for(let index=0; index<freeClasses.length && freeTeachers.length > 0; index++) {
+            const randomIndex = Math.floor(Math.random() * freeTeachers.length);
+            adjustedPeriods[index].subjectName = freeTeachers.splice(randomIndex, 1)[0].subjectName;
+        }
+
+        csvDataObj[day] = dayData.filter((d) => {
             return d.className.length > 0 && d.subjectName.length > 0
         });
-        csvDataObj[key] = csvDataObj[key].concat(adjustedPeriods);
+        csvDataObj[day] = csvDataObj[day].concat(adjustedPeriods);
     }
     return { extraTeachersRequired, timeTable: csvDataObj };
 }
