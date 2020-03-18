@@ -63,7 +63,7 @@ data: extracted csv as json, csvDataObj: extracted csv json to concat with extra
 returns extracted csv data in json format
 */
 const getCsvObject = function (subjectName, data, csvDataObj) {
-    const rows = data.split('\r\n');
+    const rows = data.indexOf('\r\n') === -1 ? data.split('\n') : data.split('\r\n');
 
     const days = rows[0].split(',').slice(1, this.length);
 
