@@ -1,146 +1,143 @@
+// metadata
+let meta = {}
 /*
-params className, csvDataObj: extracted csv as json
-returns time table in json
-*/
-const getTimeTableByClassName = function (className, csvDataObj) {
-    csvDataObj = Object.assign({}, csvDataObj);
-    const periods = [
-        '8:00 AM', '9:00 AM', '10:00 AM', '11:00 AM', '12:00 PM',
-        '1:00 PM', '2:00 PM', '3:00 PM', '4:00 PM'
-    ];
-    let data = {};
-    const days = Object.keys(csvDataObj);
-    for(period of periods) {
-        data[period] = new Array(6);
-        for (index in days) {
-            csvDataObj[days[index]] = csvDataObj[days[index]].filter(data => data.className === className);
-            for(periodData of csvDataObj[days[index]]) {
-                if (data[periodData.time]) {
-                    data[periodData.time][index] = periodData.subjectName;
+    Takes a subject wise data csv stringified & subjectNames array
+    */
+function getTimeTableByClassName(teacherWiseCsvData, subjectNames, classData) {
+    let classWiseData = {}
+    for (cls of meta.classNames) {
+        let classData = {};
+        for (subjectName of subjectNames) {
+            const teacherWiseData = teacherWiseCsvData[subjectName];
+            const rows = teacherWiseData.indexOf('\r\n') === -1 ?
+                teacherWiseData.split('\n') : teacherWiseData.split('\r\n');
+            if (Object.keys(classData).length === 0) {
+                for (period of meta.periods) {
+                    classData[period] = new Array(meta.days.length);
+                }
+            }
+        
+            for (let index = 1; index < rows.length; index++) {
+                const rowData = rows[index].split(',');
+                for (let element = 1; element < rowData.length; element++) {
+                    const thisClass = rowData[element];
+                    if (thisClass && cls === thisClass) {
+                        classData[meta.periods[index - 1]][element - 1] = subjectName;
+                    }
+                }
+            }
+        }
+        classWiseData[cls] = classData;
+    }
+    return classWiseData;
+}
+
+/*
+    Takes a subject wise data csv stringified & subjectNames array
+    */
+function setMetadata(data, subjectNames) {
+    const rows = data.indexOf('\r\n') === -1 ? data.split('\n') : data.split('\r\n');
+    let days = rows[0].split(',');
+    let periods = [];
+    let classNames = [];
+
+    for (let index = 1; index < rows.length; index++) {
+        const rowData = rows[index].split(',');
+        const period = rowData[0];
+        for (let element = 1; element < rowData.length; element++) {
+            let className = rowData[element];
+            if (className && classNames.indexOf(className) === -1) {
+                classNames.push(className);
+            }
+        }
+        periods.push(period);
+    }
+    days.shift();
+    meta = { days, periods, classNames, subjectNames };
+}
+
+/*
+    Takes a subject wise data csv stringified & returns their object
+    */
+   function _getIdleTeachers(teacherWiseCsvData, subjectNames) {
+    let idleTeacherData = {};
+    for (subjectName of subjectNames) {
+        const teacherWiseData = teacherWiseCsvData[subjectName];
+        // idleTeacherData[subjectName] = getIdleTeachers(teacherWiseData);
+        for (subjectName of subjectNames) {
+            let idleData = {}
+            const teacherWiseData = teacherWiseCsvData[subjectName];
+            const rows = teacherWiseData.indexOf('\r\n') === -1 ?
+                teacherWiseData.split('\n') : teacherWiseData.split('\r\n');
+        
+            for (period of meta.periods) {
+                idleData[period] = new Array(meta.days.length);
+            }
+        
+            for (let index = 1; index < rows.length; index++) {
+                const rowData = rows[index].split(',');
+                for (let element = 1; element < rowData.length; element++) {
+                    const thisClass = rowData[element];
+                    if (!thisClass) {
+                        idleData[meta.periods[index - 1]][element - 1] = 'free';
+                    }
+                }
+            }
+            idleTeacherData[subjectName] = idleData;
+        }
+    }
+    return idleTeacherData;
+}
+
+function getTimeTableWithNoIdleTeachers(classWiseData, teacherWiseCsvData, subjectNames) {
+    const idleTeacherData = _getIdleTeachers(teacherWiseCsvData, subjectNames);
+    let newTimeTable = Object.assign({}, classWiseData);
+    let totalFreeSlots = 0;
+    const classNames = Object.keys(classWiseData);
+
+    for (subject of subjectNames) {
+        for (period of meta.periods) {
+            let periodData = idleTeacherData[subject][period];
+            for (index in periodData) {
+                // found the free spaces
+                if (periodData[index] === "free") {
+                    totalFreeSlots++;
+                    for (cls of classNames) {
+                        if (newTimeTable[cls][period][index] &&
+                            newTimeTable[cls][period][index].indexOf(' co ') === -1) {
+                            newTimeTable[cls][period][index] += " co " + subject;
+                            break;
+                        }
+                    }
                 }
             }
         }
     }
-    return data;
+    const averageFreeSlots = totalFreeSlots/subjectNames.length;
+    const neededCoTeacherSlots = _getNeededCoTeacherSlots(newTimeTable);
+    console.log(averageFreeSlots, neededCoTeacherSlots)
+    const minRequiredExtraCoTeachers = Math.ceil(neededCoTeacherSlots/averageFreeSlots);
+
+    return { timeTable: newTimeTable, minRequiredExtraCoTeachers};
 }
 
-/*
-params csvDataObj: extracted csv as json
-returns time table in json
-*/
-const getAdjustedTimeTable = function (csvDataObj) {
-    let extraTeachersRequired = 0;
-    csvDataObj = _addLeisurePeriods(Object.assign({}, csvDataObj));
-    const days = Object.keys(csvDataObj);
-    for(day of days) {
-        let dayData = csvDataObj[day];
-        const freeClasses = dayData.filter((d) => {
-            return d.subjectName.length === 0
-        });
-        const freeTeachers = dayData.filter((d) => {
-            return d.className.length === 0
-        });
-
-        extraTeachersRequired += freeClasses.length - freeTeachers.length; 
-
-        let adjustedPeriods = freeClasses;
-
-        for(let index=0; index<freeClasses.length && freeTeachers.length > 0; index++) {
-            const randomIndex = Math.floor(Math.random() * freeTeachers.length);
-            adjustedPeriods[index].subjectName = freeTeachers.splice(randomIndex, 1)[0].subjectName;
-        }
-
-        csvDataObj[day] = dayData.filter((d) => {
-            return d.className.length > 0 && d.subjectName.length > 0
-        });
-        csvDataObj[day] = csvDataObj[day].concat(adjustedPeriods);
-    }
-    return { extraTeachersRequired, timeTable: csvDataObj };
-}
-
-/*
-params subjectName: extracted from csv filenames, 
-data: extracted csv as json, csvDataObj: extracted csv json to concat with extracted json
-returns extracted csv data in json format
-*/
-const getCsvObject = function (subjectName, data, csvDataObj) {
-    const rows = data.indexOf('\r\n') === -1 ? data.split('\n') : data.split('\r\n');
-
-    const days = rows[0].split(',').slice(1, this.length);
-
-    for (let dayIndex = 0; dayIndex < days.length; dayIndex++) {
-        let arr = csvDataObj[days[dayIndex]] || [];
-        for (let index = 1; index < rows.length; index++) {
-            let dayData = {
-                time: '',
-                className: '',
-                subjectName: ''
-            };
-            let row = rows[index].split(',');
-            dayData.time = row[0];
-            dayData.className = row[dayIndex + 1];
-            dayData.subjectName = subjectName;
-            arr.push(dayData);
-        }
-        csvDataObj[days[dayIndex]] = arr;
-    }
-    return csvDataObj;
-}
-
-/*
-utility/helper methods below
-*/
-const _getLeisurePeriodsByClassName = function (className, csvDataObj) {
-    csvDataObj = Object.assign({}, csvDataObj);
-    const periods = [
-        '8:00 AM', '9:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', 
-        '1:00 PM', '2:00 PM', '3:00 PM', '4:00 PM'
-    ];
-    
-    csvDataObj = _filterByClassName(className, csvDataObj);
-    let leisurePeriods = [];
-    let days = Object.keys(csvDataObj);
-    for (day of days) {
-        let occupiedPeriods = [];
-        csvDataObj[day].forEach((data) => {
-            occupiedPeriods.push(data.time);
-        });
-        leisurePeriods.push({day: day, 
-            periods: periods.filter((data) => occupiedPeriods.indexOf(data) === -1)});
-    }
-    return leisurePeriods;
-}
-
-const _filterByClassName = function (className, csvDataObj) {
-    csvDataObj = Object.assign({}, csvDataObj);
-    const days = Object.keys(csvDataObj);
-    for (day of days) {
-        csvDataObj[day] = csvDataObj[day].filter(data => data.className === className);
-    }
-    return csvDataObj;
-}
-
-const _addLeisurePeriods = function(data) {
-    data = Object.assign({}, data);
-    const classNames = ['6th', '7th', '8th', '9th', '10th'];
-    for (className of classNames) {
-        let leisurePeriods = _getLeisurePeriodsByClassName(className, data);
-        for (leisurePeriod of leisurePeriods) {
-            for (period of leisurePeriod.periods) {
-                let classWiseData = {
-                    time: period,
-                    className: className,
-                    subjectName: ""
-                };
-                data[leisurePeriod.day].push(classWiseData);
+function _getNeededCoTeacherSlots(newTimeTable) {
+    let neededCoTeacherSlots = 0;
+    for(cls of meta.classNames) {
+        for(period of meta.periods) {
+            let periodData = newTimeTable[cls][period];
+            for (index in periodData) {
+                if(newTimeTable[cls][period][index]
+                    && newTimeTable[cls][period][index].indexOf(' co ') === -1)
+                    neededCoTeacherSlots++;
             }
         }
     }
-    return data;
-};
+    return neededCoTeacherSlots;
+}
 
-module.exports = { 
-    getCsvObject, 
-    getTimeTableByClassName, 
-    getAdjustedTimeTable
- };
+module.exports = {
+    getTimeTableByClassName,
+    getTimeTableWithNoIdleTeachers,
+    setMetadata
+};

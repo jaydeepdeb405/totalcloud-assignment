@@ -24,10 +24,10 @@ const createReadStream = function (path) {
 
 const writeJSONToFile = async function (csvDataObj, fileName) {
     return new Promise((resolve, reject) => {
-        fs.writeFile(`${fileName}.txt`, JSON.stringify(csvDataObj, null, 2), function (err) {
+        fs.writeFile(fileName, JSON.stringify(csvDataObj, null, 2), function (err) {
             if (err) throw err;
-            console.log(`${fileName}.txt is created successfully`);
-            resolve(`${fileName}.txt is created successfully`);
+            console.log(`${fileName} is created successfully`);
+            resolve(`${fileName} is created successfully`);
         });
     });
 }

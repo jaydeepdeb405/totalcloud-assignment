@@ -4,18 +4,39 @@ const csvUtil = require('./csvUtil');
 const fileUtil = require('./fileUtil');
 const path = require('path');
 
-const startServer = function (PORT, DIR_PATH) {
+const startServer = async function (PORT, DIR_PATH) {
+
     http.createServer(async function (request, response) {
-        let csvDataObj = {};
+
+        let teacherWiseCsvData = {};
+        let classWiseData = {};
 
         const FILE_NAMES = await fileUtil.getFilenamesInDir(DIR_PATH);
-        for (fileName of FILE_NAMES) {
-            let subjectName = fileName.split('-')[1].split('.')[0].substr(1);
-            let data = await fileUtil.readDataFromFile(`${DIR_PATH}/${fileName}`);
 
-            csvDataObj = csvUtil.getCsvObject(subjectName, data, csvDataObj);
-
+        /*
+        Iterating through all subject csv data & storing it in teacherWiseCsvData object
+        */
+        for (index in FILE_NAMES) {
+            // extract subject names from csv files names
+            const subjectName = FILE_NAMES[index].split('-')[1].split('.')[0].substr(1);
+            const data = await fileUtil.readDataFromFile(`${DIR_PATH}/${FILE_NAMES[index]}`);
+            teacherWiseCsvData[subjectName] = data;
         }
+
+        const subjectNames = Object.keys(teacherWiseCsvData);
+
+        // setting csv headers/metadata
+        csvUtil.setMetadata(teacherWiseCsvData[subjectNames[0]], subjectNames);
+
+        // get class wise time table in json
+        classWiseData = csvUtil.getTimeTableByClassName(teacherWiseCsvData, subjectNames, {});
+        
+        // deep object cloning jugaad
+        await fileUtil.writeJSONToFile(classWiseData, 'classWiseData.txt');
+        let classWiseDataFromFile = JSON.parse(await fileUtil.readDataFromFile('classWiseData.txt'));
+
+        // get new time table with co teachers assigned
+        const newTimetable = csvUtil.getTimeTableWithNoIdleTeachers(classWiseDataFromFile, teacherWiseCsvData, subjectNames);
 
         const queryParams = url.parse(request.url, true).query;
         response.writeHead(200, {
@@ -25,16 +46,15 @@ const startServer = function (PORT, DIR_PATH) {
 
         if (queryParams.class) {
             if (request.url.toString().startsWith('/adjustTimeTable')) {
-                const adjustedTableData = csvUtil.getAdjustedTimeTable(csvDataObj);
                 const res = {
-                    extraTeachersRequired: adjustedTableData.extraTeachersRequired,
-                    timeTable: csvUtil.getTimeTableByClassName(queryParams.class, adjustedTableData.timeTable)
+                    extraTeachersRequired: newTimetable.minRequiredExtraCoTeachers,
+                    timeTable: newTimetable.timeTable[queryParams.class]
                 }
                 response.write(JSON.stringify(res, null, 2));
                 console.log('\x1b[33m%s\x1b[0m', `Request method = GET\nURL = ${request.url}\n`);
             }
             else {
-                response.write(JSON.stringify(csvUtil.getTimeTableByClassName(queryParams.class, csvDataObj), null, 2));
+                response.write(JSON.stringify(classWiseData[queryParams.class], null, 2));
                 console.log('\x1b[33m%s\x1b[0m', `Request method = GET\nURL = ${request.url}\n`);
             }
         }
