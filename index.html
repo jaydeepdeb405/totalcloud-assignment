@@ -13,9 +13,16 @@
 
     <div class="container" ng-controller="tableController">
         <form>
-            <span class="form-group">
-                <input type="text" id="className" ng-model="className" placeholder="Enter class name">
-            </span>
+            <div class="form-group">
+                <select class="form-control" ng-model="className" value="">
+                    <option value="">Select class</option>
+                    <option value="6th">6</option>
+                    <option value="7th">7</option>
+                    <option value="8th">8</option>
+                    <option value="9th">9</option>
+                    <option value="10th">10</option>
+                </select>
+            </div>
             <button class="btn btn-primary" ng-click="getTimeTableByClassName(className, false)">Get
                 timetable</button>
 
@@ -28,9 +35,9 @@
             </span>
         </form>
         
-        <h1>{{heading}}</h1>
         
         <div ng-if="classWiseTable" class="container">
+            <h1>{{heading}}</h1>
             <table class="table table-striped">
                 <thead class="thead-dark">
                     <tr>
