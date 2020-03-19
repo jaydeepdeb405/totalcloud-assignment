@@ -3,6 +3,5 @@
 }
 
 #extra-teachers {
-    position: relative;
-    left: 34vw;
+    float: right;
 }
