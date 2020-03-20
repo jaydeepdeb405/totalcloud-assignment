@@ -14,7 +14,7 @@
     <div class="container" ng-controller="tableController">
         <form>
             <div class="form-group">
-                <select class="form-control" ng-model="className" value="">
+                <select class="form-control" id="className" ng-model="className" value="">
                     <option value="">Select class</option>
                     <option value="6th">6</option>
                     <option value="7th">7</option>
@@ -23,13 +23,12 @@
                     <option value="10th">10</option>
                 </select>
             </div>
-            <button class="btn btn-primary" ng-click="getTimeTableByClassName(className, false)">Get
-                timetable</button>
+            <button class="btn btn-primary" ng-click="getTimeTableByClassName(className, false)">View timetable</button>
 
-            <button class="btn btn-primary" ng-click="getTimeTableByClassName(className, true)">Adjust
-                timetable</button>
+            <button class="btn btn-primary" ng-click="getTimeTableByClassName(className, true)">Assign co-teachers</button>
+            
             <span class="form-group" id="extra-teachers">
-                <label for="extraTeachers">Extra teachers required</label>
+                <label for="extraTeachers">Minimum extra co-teachers required</label>
                 <input type="text" id="extraTeachers" ng-model="extraTeachersRequired"
                     placeholder="0" readonly>
             </span>
